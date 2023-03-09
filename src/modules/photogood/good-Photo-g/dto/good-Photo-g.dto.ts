@@ -80,7 +80,6 @@ export class GoodPhotoGDto {
   @Max(9999999999, {
     message: 'El maximo valor de no_gestion debe ser 9999999999',
   })
-  @IsOptional()
   @ApiProperty({
     title: 'no_gestion',
     example: 'Dato de tipo numérico',
@@ -159,7 +158,6 @@ export class GoodPhotoGSinDto {
   @Max(9999999999, {
     message: 'El maximo valor de no_gestion debe ser 9999999999',
   })
-  @IsOptional()
   @ApiProperty({
     title: 'no_gestion',
     example: 'Dato de tipo numérico',

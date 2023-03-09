@@ -47,7 +47,6 @@ import { ApiProperty } from '@nestjs/swagger';
       @Type(() => Number)
       @IsNumber({}, { message: Message.NUMBER("$property") })
       @Max(99999, { message: "El maximo valor de id_control debe ser 99999" })
-      @IsOptional()
       @ApiProperty({ title: "id_control", example: "Dato de tipo numérico", required: false })
       id: number;
       

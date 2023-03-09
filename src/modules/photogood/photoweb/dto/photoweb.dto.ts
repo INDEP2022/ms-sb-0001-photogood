@@ -9,7 +9,6 @@ export class PhotowebDto {
   @Length(1, 255, {
     message: Message.LENGTH('$property', '$constraint1 $constraint2'),
   })
-  @IsOptional()
   @ApiProperty({
     title: 'id_inmueble',
     example: 'Dato de tipo texto',
@@ -22,7 +21,6 @@ export class PhotowebDto {
   @Max(999999999999999, {
     message: 'El maximo valor de id_foto debe ser 999999999999999',
   })
-  @IsOptional()
   @ApiProperty({
     title: 'id_foto',
     example: 'Dato de tipo numérico',

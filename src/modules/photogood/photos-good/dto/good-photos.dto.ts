@@ -9,7 +9,6 @@ export class PhotoGoodDto {
   @Length(1, 100, {
     message: Message.LENGTH('$property', '$constraint1 $constraint2'),
   })
-  @IsOptional()
   @ApiProperty({
     title: 'carpeta',
     example: 'Dato de tipo texto',
@@ -22,7 +21,6 @@ export class PhotoGoodDto {
   @Length(1, 150, {
     message: Message.LENGTH('$property', '$constraint1 $constraint2'),
   })
-  @IsOptional()
   @ApiProperty({
     title: 'ubicacion',
     example: 'Dato de tipo texto',

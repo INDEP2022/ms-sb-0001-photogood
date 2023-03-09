@@ -9,7 +9,6 @@ export class TmpGoodPhotoDto {
   @Max(9999999999, {
     message: 'El maximo valor de no_bien debe ser 9999999999',
   })
-  @IsOptional()
   @ApiProperty({
     title: 'no_bien',
     example: 'Dato de tipo numérico',
@@ -49,7 +48,6 @@ export class TmpGoodPhotoSinDto {
   @Max(9999999999, {
     message: 'El maximo valor de no_bien debe ser 9999999999',
   })
-  @IsOptional()
   @ApiProperty({
     title: 'no_bien',
     example: 'Dato de tipo numérico',
