@@ -1,0 +1,1798 @@
+{
+	"info": {
+		"_postman_id": "23ce4ee4-392a-415d-a4fb-a7771514415e",
+		"name": "ms-sb-0001-photogood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19459572"
+	},
+	"item": [
+		{
+			"name": "comer-Photofav",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/comer-Photofav",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"comer-Photofav"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filter.consecNumber",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "11",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"eventId\": 1,\r\n    \"batchId\": 2,\r\n    \"goodNumber\":3,\r\n    \"consecNumber\": 8\r\n  }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/comer-Photofav",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"comer-Photofav"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"eventId\": 1,\r\n    \"batchId\": 2,\r\n    \"goodNumber\":3\r\n  }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/comer-Photofav/find-by-ids",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"comer-Photofav",
+								"find-by-ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"eventId\": 1,\r\n    \"batchId\": 2,\r\n    \"goodNumber\":3\r\n  }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/comer-Photofav",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"comer-Photofav"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"eventId\": 1,\r\n    \"batchId\": 2,\r\n    \"goodNumber\":3,\r\n    \"consecNumber\": 4\r\n  }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/comer-Photofav",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"comer-Photofav"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "container-photossiab",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/container-photossiab",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"container-photossiab"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filter.location",
+									"value": "\\\\B0001150566\\\\B0001150566F0004.KVG",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "KVG",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{            \r\n    \"location\": \"\\\\B0001150566\\\\B0001150566F0004.KVG\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/container-photossiab/1678353",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"container-photossiab",
+								"1678353"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"visitNumber\": \"62\",\r\n    \"subcriterionId\": \"81\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/container-photossiab/1678353",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"container-photossiab",
+								"1678353"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"visitNumber\": \"11\",\r\n    \"subcriterionId\": \"81\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/container-photossiab/1678353",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"container-photossiab",
+								"1678353"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\": \"\\\\B0001150566\\\\B0001150566F0004.PNG\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/container-photossiab",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"container-photossiab"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ctrl-goods-photo",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/ctrl-goods-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"ctrl-goods-photo"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filter.filegral",
+									"value": "julir",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "545",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"filegral\": \"julir\",\r\n            \"fileProcess\": \"20200401_C17\",\r\n            \"status\": \"2\",\r\n            \"dateProcess\": \"2020-04-01\",\r\n            \"statusktl\": 2\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/ctrl-goods-photo/26",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"ctrl-goods-photo",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-dev}}/ctrl-goods-photo/26",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"ctrl-goods-photo",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"goodId\": \"5457417\",\r\n    \"startDate\": \"2022-08-16\",\r\n    \"endDate\": \"2022-08-16\",\r\n    \"transfereeId\": \"300\",\r\n    \"stationId\": \"112\",\r\n    \"authorityId\": \"1\",\r\n    \"delegationRegionalNumber\": \"12\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/ctrl-goods-photo/26",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"ctrl-goods-photo",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"filegral\": \"feder\",\r\n            \"fileProcess\": \"20200401_C17\",\r\n            \"status\": \"2\",\r\n            \"dateProcess\": \"2020-04-01\",\r\n            \"statusktl\": 2\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/ctrl-goods-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"ctrl-goods-photo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "good-photo",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/good-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-photo"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filter.numberMinutes",
+									"value": "METROPOLITANA-SAT-7178-A30-22-02",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "545",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"goodNumber\": 218387445,\r\n        \"consecNumber\": 2,\r\n        \"photoDate\": \"2012-10-26T22:47:00.000Z\",\r\n        \"location\": \"\\\\\\\\mxextw19psvrimgs01\\\\bankfots\\\\FotosSIAB\\\\Imagenes\\\\B0021838744\\\\B0021838744F0001.JPG\",\r\n        \"recordNumber\": 305315076,\r\n        \"photoDateHc\": \"2012-10-26T22:47:00.000Z\",\r\n        \"publicImgcatWeb\": null,\r\n        \"existsfs\": 5,\r\n        \"existsproduction\": 1\r\n    }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"goodNumber\": 218387445,\r\n        \"consecNumber\": 2\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-photo/find-by-ids",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-photo",
+								"find-by-ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"goodNumber\": 218387445,\r\n        \"consecNumber\": 2\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-photo"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"goodNumber\": \"218387445\",\r\n            \"consecNumber\": 2,\r\n            \"photoDate\": \"2012-10-26T22:47:00.000Z\",\r\n            \"location\": \"\\\\\\\\mxextw19psvrimgs01\\\\bankfots\\\\FotosSIAB\\\\Imagenes\\\\B0021838744\\\\B0021838744F0001.JPG\",\r\n            \"recordNumber\": 305315076,\r\n            \"photoDateHc\": \"2012-10-26T22:47:00.000Z\",\r\n            \"publicImgcatWeb\": null,\r\n            \"existsfs\": 3,\r\n            \"existsproduction\": 1\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-photo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "good-Photo-g",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-Photo-g",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-Photo-g"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filter.existsnsbdb",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "HTTPSS",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"goodNumber\": 12,\r\n        \"consecNumber\": 1895164,\r\n        \"datePhoto\": \"2022-05-26T00:00:00.000Z\",\r\n        \"location\": \"HTTPSS://WCC.SAE.GOB.MX:16200/cs/groups/public/documents/digitalmedia/ywux/nza5/~edisp/sae1709618.jpg\",\r\n        \"datePhotoHc\": \"2022-05-26T00:00:00.000Z\",\r\n        \"existsnsbdb\": 1,\r\n        \"numberManagement\": 5331737\r\n }\r\n    "
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-Photo-g/7272193",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-Photo-g",
+								"7272193"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"goodNumber\": \"1234567891\",\r\n            \"proceedingsNumber\": \"9876543211\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-Photo-g/7272193",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-Photo-g",
+								"7272193"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"goodNumber\": \"1234567890\",\r\n            \"proceedingsNumber\": \"9876543210\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-Photo-g/7272193",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-Photo-g",
+								"7272193"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"goodNumber\": null,\r\n            \"consecNumber\": \"1895164\",\r\n            \"datePhoto\": \"2022-05-26\",\r\n            \"location\": \"HTTPSS://WCC.SAE.GOB.MX:16200/cs/groups/public/documents/digitalmedia/ywux/nza5/~edisp/sae1709618.jpg\",\r\n            \"datePhotoHc\": \"2022-05-26\",\r\n            \"existsnsbdb\": \"1\",\r\n            \"numberManagement\": \"5331737\"\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/good-Photo-g",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"good-Photo-g"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "medium-good-photography",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-dev}}/medium-good-photography",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"medium-good-photography"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filter.id",
+									"value": "123",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "545",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"halfId\": \"0\",\r\n            \"photosNumber\": \"20\"\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/medium-good-photography/123",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"medium-good-photography",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"goodNumber\": \"1234567890\",\r\n            \"proceedingsNumber\": \"9876543210\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/medium-good-photography/123",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"medium-good-photography",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-dev}}/medium-good-photography/123",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"medium-good-photography",
+								"123"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"id\": \"123\",\r\n            \"halfId\": \"0\",\r\n            \"photosNumber\": \"1\"\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/medium-good-photography",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"medium-good-photography"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "photographs-goods",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/photographs-goods",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photographs-goods"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filter.regUser",
+									"value": "LSUAREZ",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "545",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"recordNumber\": 2,\r\n  \"Photography\": 200000\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photographs-goods/4",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photographs-goods",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"numberGood\": \"1234567890\",\r\n            \"numberProceedings\": \"9876543210\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photographs-goods/2",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photographs-goods",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-dev}}/photographs-goods/4",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photographs-goods",
+								"4"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 4,\r\n  \"recordNumber\": 3,\r\n  \"Photography\": 200000\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photographs-goods",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photographs-goods"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "photos-good",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/photos-good",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photos-good"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filterfile",
+									"value": "feder",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "PNG",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"file\": \"B0019884130F0001.PNG\",\r\n            \"location\": \"\\\\\\\\172.20.227.6\\\\bankfots\\\\FotosSIAB\\\\Imagenes\\\\B0019884130\\\\B0019884130F0001.JPG\"\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photos-good",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photos-good"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"file\": \"B0019884130F0001.PNG\",\r\n            \"location\": \"\\\\\\\\172.20.227.6\\\\bankfots\\\\FotosSIAB\\\\Imagenes\\\\B0019884130\\\\B0019884130F0001.JPG\"\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photos-good/find-by-ids",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photos-good",
+								"find-by-ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"file\": \"B0019884130F0001.PNG\",\r\n            \"location\": \"\\\\\\\\172.20.227.6\\\\bankfots\\\\FotosSIAB\\\\Imagenes\\\\B0019884130\\\\B0019884130F0001.JPG\"\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photos-good",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photos-good"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"file\": \"B0019884130F0001.PNG\",\r\n            \"location\": \"\\\\\\\\172.20.227.6\\\\bankfots\\\\FotosSIAB\\\\Imagenes\\\\B0019884130\\\\B0019884130F0001.JPG\"\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photos-good",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photos-good"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "photoweb",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/photoweb",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photoweb"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "filter.photo",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "feder",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"propertyId\": \"12\",\r\n            \"photoId\": \"11\",\r\n            \"detailPhoto\": \"julir\",\r\n            \"photo\": \"DB_CISI\\\\FOTOS\\\\1129_10.jpg\",\r\n            \"goodNumber\": \"183758\"\r\n        }"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photoweb",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photoweb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"propertyId\": \"12\",\r\n            \"photoId\": \"11\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photoweb/find-by-ids",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photoweb",
+								"find-by-ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"propertyId\": \"12\",\r\n            \"photoId\": \"11\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/photoweb",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photoweb"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"propertyId\": \"12\",\r\n            \"photoId\": \"11\",\r\n            \"detailPhoto\": \"feder\",\r\n            \"photo\": \"DB_CISI\\\\FOTOS\\\\1129_10.jpg\",\r\n            \"goodNumber\": \"183758\"\r\n        }\r\n        "
+						},
+						"url": {
+							"raw": "{{url-dev}}/photoweb",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"photoweb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tmp-good-photo",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/tmp-good-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-good-photo"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "filter.valmovement",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "feder",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"goodNumber\": 12,\r\n  \"photo\": \"ju\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/tmp-good-photo/3",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-good-photo",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"numberGood\": \"1234567890\",\r\n            \"numberProceedings\": \"9876543210\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/tmp-good-photo/3",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-good-photo",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-dev}}/tmp-good-photo/3",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-good-photo",
+								"3"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"goodNumber\": 12,\r\n  \"photo\": \"fe\"\r\n}\r\n        "
+						},
+						"url": {
+							"raw": "{{url-dev}}/tmp-good-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-good-photo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tmp-goods-photo",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-dev}}/tmp-goods-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-goods-photo"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "filter.valmovement",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "feder",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {    \r\n            \"controlId\": \"21\",\r\n            \"goodNumber\": \"3103305\",\r\n            \"goodId\": null,\r\n            \"consecNumber\": \"10\",\r\n            \"pathLocation\": \"\\\\\\\\172.20.227.6\\\\bankfots\\\\SIAB_F_03\\\\Imagenes\\\\20200129_C15\\\\B0003103305\\\\B0003103305F0004.JPG\",\r\n            \"filegral\": \"SIAB_F_03\",\r\n            \"fileGood\": \"julir\",\r\n            \"dateMigration\": \"2020-02-02\",\r\n            \"statusmigrate\": \"3\",\r\n            \"origin\": \"IMAGENES\",\r\n            \"sizefs\": \"35925\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/tmp-goods-photo/3030077",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-goods-photo",
+								"3030077"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"numberGood\": \"1234567890\",\r\n            \"numberProceedings\": \"9876543210\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/tmp-goods-photo/3030077",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-goods-photo",
+								"3030077"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url-dev}}/tmp-goods-photo/3030077",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-goods-photo",
+								"3030077"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {    \r\n            \"controlId\": \"21\",\r\n            \"goodNumber\": \"3103305\",\r\n            \"goodId\": null,\r\n            \"consecNumber\": \"10\",\r\n            \"pathLocation\": \"\\\\\\\\172.20.227.6\\\\bankfots\\\\SIAB_F_03\\\\Imagenes\\\\20200129_C15\\\\B0003103305\\\\B0003103305F0004.JPG\",\r\n            \"filegral\": \"SIAB_F_03\",\r\n            \"fileGood\": \"feder\",\r\n            \"dateMigration\": \"2020-02-02\",\r\n            \"statusmigrate\": \"3\",\r\n            \"origin\": \"IMAGENES\",\r\n            \"sizefs\": \"35925\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url-dev}}/tmp-goods-photo",
+							"host": [
+								"{{url-dev}}"
+							],
+							"path": [
+								"tmp-goods-photo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
