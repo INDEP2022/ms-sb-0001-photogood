@@ -6,6 +6,7 @@ import * as path from 'path';
 import { configService } from './shared/config/config.service';
 import { ConfigModule } from '@nestjs/config';
 import { PhotogoodModule } from './modules/photogood/programming-good.module';
+import { ApplicationModule } from './modules/application/application.module';
 
 
 @Module({
@@ -45,6 +46,7 @@ import { PhotogoodModule } from './modules/photogood/programming-good.module';
       ],
     }),
     PhotogoodModule,
+    ApplicationModule,
   ],
   providers: [],
   controllers: [],
