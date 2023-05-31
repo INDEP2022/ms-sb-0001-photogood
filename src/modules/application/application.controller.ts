@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Param } from '@nestjs/common';
 import { ApiBody, ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ApplicationService } from './application.service';
 import { QueryStatusPhotoCatWebDto, QueryVcatwebDto } from './dto/query-fimgfotbieadd.dto';
@@ -28,5 +28,33 @@ export class ApplicationController {
     @Get('queryVgoodsPhotoPath')
     async queryVgoodsPhotoPath() {
         return this.service.queryVgoodsPhotoPath();
+    }
+
+    @ApiOperation({ summary: 'PUP_EXPORTA_FOTOS_BIEN' })
+    @ApiBody({ type: '' })
+    @Get('pup-export-photos-good')
+    async pupExportPhotosGood() {
+        return this.service.pupExportPhotosGood();
+    }
+
+    @ApiOperation({ summary: 'PUP_EXPORTA_FOTOS_MASIV' })
+    @ApiBody({ type: '' })
+    @Get('pup-export-photos-masiv/:id')
+    async pupExportPhotosMasiv(@Param('id') id: number) {
+        return this.service.pupExportPhotosMasiv(id);
+    }
+
+    @ApiOperation({ summary: 'PUP_INS_LISTA_FOTOS' })
+    @ApiBody({ type: '' })
+    @Get('pup-ins-list-photos')
+    async pupInsListPhoto() {
+        return this.service.pupInsListPhoto();
+    }
+
+    @ApiOperation({ summary: 'PUP_OBTIENE_FOTOS' })
+    @ApiBody({ type: '' })
+    @Get('pup-gets-photos')
+    async pupGetsPhotos() {
+        return this.service.pupGetsPhotos();
     }
 }
