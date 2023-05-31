@@ -138,17 +138,17 @@ export class ApplicationService {
         }
     }
 
-    async pupInsListPhoto() {
+    async pupInsListPhoto(id) {
         try {
             const result = await this.entity.query(`
             SELECT UBICACION
             FROM sera.BIENES_FOTO BF
-            WHERE NOT EXISTS (
-                SELECT 1
-                FROM siabinfo.BIENES_FOTO_INVALIDAS BFI
-                WHERE BFI.NO_BIEN = BF.NO_BIEN
-                AND BFI.NO_CONSEC = BF.NO_CONSEC
-            );`)
+            WHERE NOT EXISTS (SELECT 1
+                            FROM siabinfo.BIENES_FOTO_INVALIDAS BFI
+                            WHERE BFI.NO_BIEN = BF.NO_BIEN
+                            AND BFI.NO_CONSEC = BF.NO_CONSEC)
+            AND NO_BIEN = ${id}
+            ORDER BY NO_CONSEC;`)
             return {
                 statusCode: HttpStatus.OK,
                 message: ['Busqueda existosa'],

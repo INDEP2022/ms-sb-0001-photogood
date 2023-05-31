@@ -47,8 +47,8 @@ export class ApplicationController {
     @ApiOperation({ summary: 'PUP_INS_LISTA_FOTOS' })
     @ApiBody({ type: '' })
     @Get('pup-ins-list-photos')
-    async pupInsListPhoto() {
-        return this.service.pupInsListPhoto();
+    async pupInsListPhoto(@Param('id') id: number) {
+        return this.service.pupInsListPhoto(id);
     }
 
     @ApiOperation({ summary: 'PUP_OBTIENE_FOTOS' })
