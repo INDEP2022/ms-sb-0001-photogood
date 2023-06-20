@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import { IsNumber, IsString } from 'class-validator';
-import { Message } from 'sigebi-lib-common';
+import { Message } from 'src/shared/utils/message.decorator';
 
 export class QueryVcatwebDto {
     @Type(() => Number)

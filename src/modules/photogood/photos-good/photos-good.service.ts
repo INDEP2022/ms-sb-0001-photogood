@@ -1,12 +1,11 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PaginateQuery } from 'nestjs-paginate';
-import {
-  BaseService,
-  ResponseData,
-  ResponseDataDTO,
-  CRUDMessages,
-} from 'sigebi-lib-common';
+import { BaseService } from 'src/core/interfaces/service.commons';
+import { ResponseDataDTO } from 'src/core/interfaces/response.data.dto';
+import { CRUDMessages } from 'src/shared/utils/message.enum';
+import { ResponseData } from 'src/core/interfaces/responseData.data.dto';
+
 import { CommonFilterService } from 'src/shared/service/common-filter.service';
 import { Repository } from 'typeorm';
 import { PhotoGoodDto, PhotoGoodFieldsDTO } from './dto/good-photos.dto';

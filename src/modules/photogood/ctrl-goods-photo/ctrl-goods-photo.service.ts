@@ -1,7 +1,8 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PaginateQuery } from 'nestjs-paginate';
-import { CRUDMessages } from 'sigebi-lib-common';
+import { CRUDMessages } from 'src/shared/utils/message.enum';
+
 import { Repository } from 'typeorm';
 import { CtrlGoodsPhotoDto } from './dto/ctrl-goods-photo.dto';
 import { CommonFilterService } from '../../../shared/service/common-filter.service';

@@ -12,7 +12,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { Paginate, PaginateQuery } from 'nestjs-paginate';
-import { BaseService } from 'sigebi-lib-common';
+import { BaseService } from 'src/core/interfaces/service.commons';
 import { GoodPhotoService } from './good-photo.service';
 import { GoodPhotoEntity } from '../infrastructure/good-photo.entity';
 
