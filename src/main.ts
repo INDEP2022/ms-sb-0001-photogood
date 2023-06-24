@@ -24,7 +24,8 @@ function configureSwagger(app): void {
 async function bootstrap() {
 
   const app_port= process.env.HOST_PORT ? Number(process.env.HOST_PORT) : 3000;
-  const ms_port = process.env.MS_PORT_MICRO ? Number(process.env.MS_PORT_MICRO) : 3001;
+  const ms_port_micro = process.env.MS_PORT_MICRO ? Number(process.env.MS_PORT_MICRO) : 3001;
+  const host_name = process.env.HOST_NAME ? process.env.HOST_NAME : '0.0.0.0';
 
   const logger = new Logger();
   const app = await NestFactory.create(AppModule);
@@ -50,15 +51,17 @@ async function bootstrap() {
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.TCP,
     options: {
-      host:'0.0.0.0',
-      port:ms_port
+      host: host_name,
+      port:ms_port_micro
     },
   });
 
   await app.startAllMicroservices();
   await app.listen(app_port);
-  logger.log(
-    `🚀 MS Audit service running on port ${app_port}}`,
-  );
+  console.log(`Microservice listening INTERNAL${process.env.MS_NAME} on Enviroment:`, process.env.ENV);
+  console.log(`Microservice listening INTERNAL${process.env.MS_NAME} name:`, process.env.MS_NAME);
+  console.log(`Microservice listening INTERNAL${process.env.MS_NAME} on ports:`, app_port + ":" + ms_port_micro);
+  console.log(`Microservice INTERNAL${process.env.MS_NAME} is running on: ${ms_port_micro}`);
+  console.log(`Host name: ${host_name}`);
 }
 bootstrap();

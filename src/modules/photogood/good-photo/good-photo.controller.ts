@@ -15,6 +15,7 @@ import { Paginate, PaginateQuery } from 'nestjs-paginate';
 import { BaseService } from 'src/core/interfaces/service.commons';
 import { GoodPhotoService } from './good-photo.service';
 import { GoodPhotoEntity } from '../infrastructure/good-photo.entity';
+import { MessagePattern } from '@nestjs/microservices';
 
 @ApiCreatedResponse()
 @ApiTags('bienes_foto')
@@ -68,6 +69,8 @@ export class GoodPhotoController {
     return await this.service.findOneRegisterByIds(dto);
   }
 
+  
+
   @ApiOperation({ summary: 'Guardar nuevo registro' })
   @ApiBody({ type: GoodPhotoDto })
   @ApiResponse({
@@ -80,6 +83,11 @@ export class GoodPhotoController {
     return await this.service.create(dto);
   }
 
+  @MessagePattern({ cmd: 'createRegister' })
+  async createRegister2(dto: GoodPhotoFieldsDTO) {
+    return await this.service.create(dto);
+  }
+  
   @ApiOperation({ summary: 'Actualiza un registro' })
   @ApiBody({ type: GoodPhotoDto })
   @ApiResponse({
