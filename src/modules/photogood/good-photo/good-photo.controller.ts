@@ -100,11 +100,23 @@ export class GoodPhotoController {
     return this.service.updateRegister(dto);
   }
 
+  @MessagePattern({ cmd: 'updateRegister' })
+  async updateRegister2(dto: GoodPhotoDto) {
+    return await this.service.updateRegister(dto);
+  }
+
   @ApiOperation({ summary: 'Elimina un registro por identificador' })
   @ApiBody({
     type: GoodPhotoFieldsDTO,
     description: 'Identificador tabla',
   })
+
+
+  @MessagePattern({ cmd: 'deleteRegister' })
+  async deleteRegister2(dto: GoodPhotoFieldsDTO) {
+    return await this.service.deleteRegister(dto);
+  }
+
   @Delete()
   async deleteRegister(@Body() dto: GoodPhotoFieldsDTO) {
     return await this.service.deleteRegister(dto);
