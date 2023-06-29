@@ -42,7 +42,7 @@ export class GoodPhotoService extends BaseService<GoodPhotoEntity> {
 
   async createNewRegister(dto: GoodPhotoDto) {
     try {
-      const value = await this.repository.findOne({where: dto});
+      const value = await this.repository.findOne({ where: { goodNumber: dto.goodNumber, consecNumber: dto.consecNumber } });
       if (value) {
         return {
           statusCode: HttpStatus.BAD_REQUEST,
@@ -74,17 +74,17 @@ export class GoodPhotoService extends BaseService<GoodPhotoEntity> {
     });
     return value
       ? {
-          statusCode: HttpStatus.OK,
-          message: ['Datos obtenidos correctamente.'],
-          data: value,
-          count: 1,
-        }
+        statusCode: HttpStatus.OK,
+        message: ['Datos obtenidos correctamente.'],
+        data: value,
+        count: 1,
+      }
       : {
-          statusCode: HttpStatus.BAD_REQUEST,
-          message: ['No se encontraron registros.'],
-          data: [],
-          count: 0,
-        };
+        statusCode: HttpStatus.BAD_REQUEST,
+        message: ['No se encontraron registros.'],
+        data: [],
+        count: 0,
+      };
   }
 
   async updateRegister(dto: GoodPhotoDto) {
@@ -121,13 +121,13 @@ export class GoodPhotoService extends BaseService<GoodPhotoEntity> {
       });
       return affected == 1
         ? {
-            statusCode: HttpStatus.OK,
-            message: [CRUDMessages.DeleteSuccess],
-          }
+          statusCode: HttpStatus.OK,
+          message: [CRUDMessages.DeleteSuccess],
+        }
         : {
-            statusCode: HttpStatus.BAD_REQUEST,
-            message: ['El registro no existe!'],
-          };
+          statusCode: HttpStatus.BAD_REQUEST,
+          message: ['El registro no existe!'],
+        };
     } catch (error) {
       return {
         statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
