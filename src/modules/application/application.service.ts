@@ -146,12 +146,21 @@ export class ApplicationService {
             let  PUBL_IMG_CAT_WEB: number;
             let V_CAT_WEB: number;
             let now = LocalDate.getNow('YYYY-MM-DD HH:mm:ss');
+            let fot = '';
+            let hist = '';
 
+
+            if (pPathBiefot){
+                fot = pPathBiefot.toString().replace(/\//g, "\\");
+            }
+            if (pPathHist){
+                hist = pPathHist.toString().replace(/\//g, "\\");
+            }
             const select = await this.entity.query(`
                     SELECT coalesce (MAX(PUBL_IMG_CAT_WEB),0) as data
                     FROM sera.BIENES_FOTO
                     WHERE NO_BIEN = ${pGoodNumber} 
-                    AND UBICACION = '${pPathBiefot}'; 
+                    AND UBICACION = '${fot}'; 
                    
                  `)
                  V_CAT_WEB = select[0].data
@@ -167,7 +176,7 @@ export class ApplicationService {
                     '${user}',
                     ${V_CAT_WEB},
                     '${pPathBiefot}',
-                   ' ${pPathHist}'
+                   ' ${hist}'
                     )
               `)
 
