@@ -140,26 +140,36 @@ export class ApplicationService {
             };
         }
     }
-        async pupInsHistBienPhoto({pGoodNumber,pPathBiefot, pPathHist, user}: QueryVcatwebHistDto) {
+        async pupInsHistBienPhoto({pGoodNumber,consecNumber, newConsecNumber, user}: QueryVcatwebHistDto) {
         try {
-            let  PUBL_IMG_CAT_WEB: number;
             let V_CAT_WEB: number;
             let now = LocalDate.getNow('YYYY-MM-DD HH:mm:ss');
-            let fot = '';
-            let hist = '';
+            let index = '\\\\165.128.172.66\\bankfots\\SIAB_F_01\\Imagenes';
+            let consecgoodNumber
+            let newserialConsecNumber
+            let oldserialConsecNumber
 
+            if (!isNaN(Number(pGoodNumber))) {
+                consecgoodNumber = 'B' + pGoodNumber.toString().padStart(10, '0');
+              }
 
-            if (pPathBiefot){
-                fot = pPathBiefot.toString().replace(/\//g, "\\");
-            }
-            if (pPathHist){
-                hist = pPathHist.toString().replace(/\//g, "\\");
-            }
+            if (!isNaN(Number(newConsecNumber))) {
+                newserialConsecNumber = 'F' + newConsecNumber.padStart(4, '0');
+              }
+            
+            if (!isNaN(Number(consecNumber))) {
+                oldserialConsecNumber = 'F' + consecNumber.padStart(4, '0');
+              }
+            
+              let newlink = `${index}\\${consecgoodNumber}\\${consecgoodNumber}\\${newserialConsecNumber}.JPG`
+              let oldlink = `${index}\\${consecgoodNumber}\\${consecgoodNumber}\\${oldserialConsecNumber}.JPG`
+              console.log( newlink);
+              console.log( oldlink);
             const select = await this.entity.query(`
                     SELECT coalesce (MAX(PUBL_IMG_CAT_WEB),0) as data
                     FROM sera.BIENES_FOTO
                     WHERE NO_BIEN = ${pGoodNumber} 
-                    AND UBICACION = '${fot}'; 
+                    AND UBICACION = '${newlink}'; 
                    
                  `)
                  V_CAT_WEB = select[0].data
@@ -174,8 +184,8 @@ export class ApplicationService {
                     '${now}',
                     '${user}',
                     ${V_CAT_WEB},
-                    '${pPathBiefot}',
-                   ' ${hist}'
+                    '${newlink}',
+                   ' ${oldlink}'
                     )
               `)
 

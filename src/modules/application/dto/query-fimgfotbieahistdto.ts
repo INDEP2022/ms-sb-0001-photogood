@@ -19,7 +19,7 @@ export class QueryVcatwebHistDto {
         example: 'Dato de tipo texto',
         required: false,
     })
-    pPathBiefot: string | null;
+    newConsecNumber: string | null;
     @Type(() => String)
     @IsString({ message: Message.STRING('$property') })
     @ApiProperty({
@@ -27,7 +27,7 @@ export class QueryVcatwebHistDto {
         example: 'Dato de tipo texto',
         required: false,
     })
-    pPathHist: string | null;
+    consecNumber: string | null;
     @Type(() => String)
     @IsString({ message: Message.STRING('$property') })
     @ApiProperty({
