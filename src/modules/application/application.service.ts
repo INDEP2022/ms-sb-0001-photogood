@@ -1,6 +1,9 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { Connection } from 'typeorm';
 import { QueryStatusPhotoCatWebDto, QueryVcatwebDto } from './dto/query-fimgfotbieadd.dto';
+import { QueryVcatwebHistDto } from './dto/query-fimgfotbieahistdto';
+import { CRUDMessages } from 'src/shared/utils/message.enum';
+import { LocalDate } from 'src/shared/local-date';
 
 @Injectable()
 export class ApplicationService {
@@ -129,6 +132,47 @@ export class ApplicationService {
                 statusCode: HttpStatus.OK,
                 message: ['Busqueda existosa'],
                 data: result
+            };
+        } catch (error) {
+            return {
+                statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+                message: [error.message],
+            };
+        }
+    }
+        async pupInsHistBienPhoto({pGoodNumber,pPathBiefot, pPathHist, user}: QueryVcatwebHistDto) {
+        try {
+            let  PUBL_IMG_CAT_WEB: number;
+            let V_CAT_WEB: number;
+            let now = LocalDate.getNow('YYYY-MM-DD HH:mm:ss');
+
+            const select = await this.entity.query(`
+                    SELECT coalesce (MAX(${PUBL_IMG_CAT_WEB}),0) as data
+                    FROM BIENES_FOTO
+                    WHERE NO_BIEN = ${pGoodNumber} 
+                    AND UBICACION = '${pPathBiefot}'; 
+                   
+                 `)
+                 V_CAT_WEB = select[0].data
+                 await this.entity.query(`INSERT INTO HISTORICO_FOTOS_BIEN (NO_BIEN,
+                    FEC_ELIMINA,
+                    USUARIO_ELIMINA,
+                    PUBL_IMG_CAT_WEB,
+                    UBICACION_BIEN_FOTOS,
+                    UBICACION_HISTORICO
+                        )
+                    VALUES (${pGoodNumber},
+                    '${now}',
+                    '${user}',
+                    ${V_CAT_WEB},
+                    '${pPathBiefot}',
+                   ' ${pPathHist}'
+                    )
+              `)
+
+            return {
+                statusCode: HttpStatus.OK,
+                message: [CRUDMessages.CreateSuccess],
             };
         } catch (error) {
             return {

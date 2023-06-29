@@ -2,6 +2,7 @@ import { Body, Controller, Get, Post, Param } from '@nestjs/common';
 import { ApiBody, ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ApplicationService } from './application.service';
 import { QueryStatusPhotoCatWebDto, QueryVcatwebDto } from './dto/query-fimgfotbieadd.dto';
+import { QueryVcatwebHistDto } from './dto/query-fimgfotbieahistdto';
 
 @ApiCreatedResponse()
 @ApiTags('aplicación')
@@ -21,6 +22,12 @@ export class ApplicationController {
     @Post('queryStatusPhotoCatWeb')
     async queryStatusPhotoCatWeb(@Body() dto: QueryStatusPhotoCatWebDto) {
         return this.service.queryStatusPhotoCatWeb(dto);
+    }
+    @ApiOperation({ summary: 'PUP_INS_HISTBIENFOTO' })
+    @ApiBody({ type: QueryVcatwebHistDto })
+    @Post('pupInsHistBienPhoto')
+    async pupInsHistBienPhoto(@Body() dto: QueryVcatwebHistDto) {
+        return this.service.pupInsHistBienPhoto(dto);
     }
     //---------------------------------------------------------------------------------------------
     @ApiOperation({ summary: 'FIMGFOTBIEADD V_BIENES_FOTO_PATH' })
