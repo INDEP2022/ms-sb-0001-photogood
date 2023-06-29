@@ -80,12 +80,12 @@ export class GoodPhotoController {
   })
   @Post()
   async createRegister(@Body() dto: GoodPhotoDto) {
-    return await this.service.create(dto);
+    return await this.service.createNewRegister(dto);
   }
 
   @MessagePattern({ cmd: 'createRegister' })
-  async createRegister2(dto: GoodPhotoFieldsDTO) {
-    return await this.service.create(dto);
+  async createRegister2(dto: GoodPhotoDto) {
+    return await this.service.createNewRegister(dto);
   }
   
   @ApiOperation({ summary: 'Actualiza un registro' })

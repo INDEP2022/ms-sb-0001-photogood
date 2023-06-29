@@ -42,11 +42,12 @@ export class GoodPhotoService extends BaseService<GoodPhotoEntity> {
 
   async createNewRegister(dto: GoodPhotoDto) {
     try {
-      const value = await this.findOneRegisterByIds(dto);
-      if (value.count > 0) {
+      const value = await this.repository.findOne({where: dto});
+      if (value) {
         return {
           statusCode: HttpStatus.BAD_REQUEST,
           message: ['Los ids ya fueron registrados'],
+          data: false
         };
       } else {
         const creation = await this.repository.save(dto);
