@@ -4,6 +4,7 @@ import { QueryStatusPhotoCatWebDto, QueryVcatwebDto } from './dto/query-fimgfotb
 import { QueryVcatwebHistDto } from './dto/query-fimgfotbieahistdto';
 import { CRUDMessages } from 'src/shared/utils/message.enum';
 import { LocalDate } from 'src/shared/local-date';
+import { PupListPhotosTrackerDto } from './dto/pup-list-photos-tracker.dto';
 
 @Injectable()
 export class ApplicationService {
@@ -249,4 +250,51 @@ export class ApplicationService {
             };
         }
     }
+
+    /**** FCONGENRASTREADOR */
+    async pupInsListPhotosTracker(dto : PupListPhotosTrackerDto) {
+        const { pcNoGood, lNuNoGood } = dto;
+        try {
+            const cuImg = await this.entity.query(`
+                SELECT ubicacion
+                FROM sera.bienes_foto bf
+                WHERE NOT EXISTS (SELECT 1
+                    FROM siabinfo.bienes_foto_invalidas bfi
+                    WHERE bfi.no_bien = bf.no_bien
+                        AND bfi.no_consec = bf.no_consec
+                ) 
+                AND no_bien = '${pcNoGood}'
+                ORDER BY no_consec
+            `);
+            if(cuImg.length == 0) {
+                return {
+                    statusCode: HttpStatus.BAD_REQUEST,
+                    message: ['No se encontraron registros.'],
+                    data: null
+                };
+            }
+
+            await this.entity.query(`
+                DELETE FROM sera.imgfichacomercial WHERE no_bien = '${lNuNoGood}'
+            `);
+            for(const reImg of cuImg) {
+                await this.entity.query(`
+                    INSERT INTO sera.imgfichacomercial 
+                    VALUES ('${lNuNoGood}', '${reImg.ubicacion}')
+                `);
+            }
+            return {
+                statusCode: HttpStatus.OK,
+                message: ["Consulta realizada correctamente."],
+                data: "OK"
+            };
+
+        } catch (error) {
+            return {
+                statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+                message: [error.message],
+            };
+        }
+    }
+
 }

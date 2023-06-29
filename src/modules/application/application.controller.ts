@@ -1,8 +1,9 @@
 import { Body, Controller, Get, Post, Param } from '@nestjs/common';
-import { ApiBody, ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiCreatedResponse, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ApplicationService } from './application.service';
 import { QueryStatusPhotoCatWebDto, QueryVcatwebDto } from './dto/query-fimgfotbieadd.dto';
 import { QueryVcatwebHistDto } from './dto/query-fimgfotbieahistdto';
+import { PupListPhotosTrackerDto } from './dto/pup-list-photos-tracker.dto';
 
 @ApiCreatedResponse()
 @ApiTags('aplicación')
@@ -64,4 +65,21 @@ export class ApplicationController {
     async pupGetsPhotos() {
         return this.service.pupGetsPhotos();
     }
+
+    /**** FCONGENRASTREADOR  ***/
+    @ApiOperation({ summary: 'FCONGENRASTREADOR' })
+    @ApiBody({
+        description: "Cuerpo de los datos a procesar",
+        type: PupListPhotosTrackerDto,
+        required: true
+    })
+    @ApiResponse({
+        status: 2000,
+        description: "Consulta realizada correctamente."
+    })
+    @Post('pup-list-photos-tracker')
+    async pupInsListPhotosTracker(@Body() pupListPhotosTrackerDto : PupListPhotosTrackerDto) {
+        return this.service.pupInsListPhotosTracker(pupListPhotosTrackerDto);
+    }
+
 }
