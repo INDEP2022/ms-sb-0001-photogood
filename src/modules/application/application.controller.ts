@@ -4,6 +4,7 @@ import { ApplicationService } from './application.service';
 import { QueryStatusPhotoCatWebDto, QueryVcatwebDto } from './dto/query-fimgfotbieadd.dto';
 import { QueryVcatwebHistDto } from './dto/query-fimgfotbieahistdto';
 import { PupListPhotosTrackerDto } from './dto/pup-list-photos-tracker.dto';
+import { MessagePattern } from '@nestjs/microservices';
 
 @ApiCreatedResponse()
 @ApiTags('aplicación')
@@ -30,6 +31,13 @@ export class ApplicationController {
     async pupInsHistBienPhoto(@Body() dto: QueryVcatwebHistDto) {
         return this.service.pupInsHistBienPhoto(dto);
     }
+
+
+    @MessagePattern({ cmd: 'pupInsHistBienPhoto' })
+    async pupInsHistBienPhoto2(dto: QueryVcatwebHistDto) {
+        return this.service.pupInsHistBienPhoto(dto);
+    }
+
     //---------------------------------------------------------------------------------------------
     @ApiOperation({ summary: 'FIMGFOTBIEADD V_BIENES_FOTO_PATH' })
     @ApiBody({ type: QueryVcatwebDto })
@@ -78,7 +86,7 @@ export class ApplicationController {
         description: "Consulta realizada correctamente."
     })
     @Post('pup-list-photos-tracker')
-    async pupInsListPhotosTracker(@Body() pupListPhotosTrackerDto : PupListPhotosTrackerDto) {
+    async pupInsListPhotosTracker(@Body() pupListPhotosTrackerDto: PupListPhotosTrackerDto) {
         return this.service.pupInsListPhotosTracker(pupListPhotosTrackerDto);
     }
 

@@ -141,31 +141,22 @@ export class ApplicationService {
             };
         }
     }
-        async pupInsHistBienPhoto({pGoodNumber,consecNumber, newConsecNumber, user}: QueryVcatwebHistDto) {
+    async pupInsHistBienPhoto({ pGoodNumber, consecNumber, newConsecNumber, user }: QueryVcatwebHistDto) {
         try {
             let V_CAT_WEB: number;
             let now = LocalDate.getNow('YYYY-MM-DD HH:mm:ss');
             let index = '\\\\165.128.172.66\\bankfots\\SIAB_F_01\\Imagenes';
+            let indexHis = '\\165.128.172.66\bankfots\SIABFotsHist\Imagenes';
             let consecgoodNumber
             let newserialConsecNumber
             let oldserialConsecNumber
 
             if (!isNaN(Number(pGoodNumber))) {
                 consecgoodNumber = 'B' + pGoodNumber.toString().padStart(10, '0');
-              }
+            }
 
-            if (!isNaN(Number(newConsecNumber))) {
-                newserialConsecNumber = 'F' + newConsecNumber.padStart(4, '0');
-              }
-            
-            if (!isNaN(Number(consecNumber))) {
-                oldserialConsecNumber = 'F' + consecNumber.padStart(4, '0');
-              }
-            
-              let newlink = `${index}\\${consecgoodNumber}\\${consecgoodNumber}\\${newserialConsecNumber}.JPG`
-              let oldlink = `${index}\\${consecgoodNumber}\\${consecgoodNumber}\\${oldserialConsecNumber}.JPG`
-              console.log( newlink);
-              console.log( oldlink);
+            let newlink = `${indexHis}\\${consecgoodNumber}\\${consecgoodNumber}\\${newConsecNumber}`
+            let oldlink = `${index}\\${consecgoodNumber}\\${consecgoodNumber}\\${consecNumber}`
             const select = await this.entity.query(`
                     SELECT coalesce (MAX(PUBL_IMG_CAT_WEB),0) as data
                     FROM sera.BIENES_FOTO
@@ -173,8 +164,8 @@ export class ApplicationService {
                     AND UBICACION = '${newlink}'; 
                    
                  `)
-                 V_CAT_WEB = select[0].data
-                 await this.entity.query(`INSERT INTO sera.HISTORICO_FOTOS_BIEN (NO_BIEN,
+            V_CAT_WEB = select[0].data
+            await this.entity.query(`INSERT INTO sera.HISTORICO_FOTOS_BIEN (NO_BIEN,
                     FEC_ELIMINA,
                     USUARIO_ELIMINA,
                     PUBL_IMG_CAT_WEB,
@@ -237,7 +228,7 @@ export class ApplicationService {
                                 FROM sera.TMP_BIEN_FOTO)                                  
             ) AS subquery
             GROUP BY NO_BIEN, RUTA;`)
-        
+
             return {
                 statusCode: HttpStatus.OK,
                 message: ['Busqueda existosa'],
@@ -252,7 +243,7 @@ export class ApplicationService {
     }
 
     /**** FCONGENRASTREADOR */
-    async pupInsListPhotosTracker(dto : PupListPhotosTrackerDto) {
+    async pupInsListPhotosTracker(dto: PupListPhotosTrackerDto) {
         const { pcNoGood, lNuNoGood } = dto;
         try {
             const cuImg = await this.entity.query(`
@@ -266,7 +257,7 @@ export class ApplicationService {
                 AND no_bien = '${pcNoGood}'
                 ORDER BY no_consec
             `);
-            if(cuImg.length == 0) {
+            if (cuImg.length == 0) {
                 return {
                     statusCode: HttpStatus.BAD_REQUEST,
                     message: ['No se encontraron registros.'],
@@ -277,7 +268,7 @@ export class ApplicationService {
             await this.entity.query(`
                 DELETE FROM sera.imgfichacomercial WHERE no_bien = '${lNuNoGood}'
             `);
-            for(const reImg of cuImg) {
+            for (const reImg of cuImg) {
                 await this.entity.query(`
                     INSERT INTO sera.imgfichacomercial 
                     VALUES ('${lNuNoGood}', '${reImg.ubicacion}')
