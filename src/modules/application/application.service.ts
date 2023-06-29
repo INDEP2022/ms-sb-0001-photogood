@@ -147,14 +147,14 @@ export class ApplicationService {
             let now = LocalDate.getNow('YYYY-MM-DD HH:mm:ss');
 
             const select = await this.entity.query(`
-                    SELECT coalesce (MAX(${PUBL_IMG_CAT_WEB}),0) as data
-                    FROM BIENES_FOTO
+                    SELECT coalesce (MAX(PUBL_IMG_CAT_WEB),0) as data
+                    FROM sera.BIENES_FOTO
                     WHERE NO_BIEN = ${pGoodNumber} 
                     AND UBICACION = '${pPathBiefot}'; 
                    
                  `)
                  V_CAT_WEB = select[0].data
-                 await this.entity.query(`INSERT INTO HISTORICO_FOTOS_BIEN (NO_BIEN,
+                 await this.entity.query(`INSERT INTO sera.HISTORICO_FOTOS_BIEN (NO_BIEN,
                     FEC_ELIMINA,
                     USUARIO_ELIMINA,
                     PUBL_IMG_CAT_WEB,
