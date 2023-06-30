@@ -146,7 +146,7 @@ export class ApplicationService {
             let V_CAT_WEB: number;
             let now = LocalDate.getNow('YYYY-MM-DD HH:mm:ss');
             let index = '\\\\165.128.172.66\\bankfots\\SIAB_F_01\\Imagenes';
-            let indexHis = '\\165.128.172.66\bankfots\SIABFotsHist\Imagenes';
+            let indexHis = '\\\\165.128.172.66\bankfots\SIABFotsHist\Imagenes';
             let consecgoodNumber
             let newserialConsecNumber
             let oldserialConsecNumber
