@@ -34,6 +34,7 @@
     "moment-timezone": "^0.5.43",
     "nest-winston": "^1.8.0",
     "nestjs-paginate": "4.6.1",
+    "pg": "^8.11.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",

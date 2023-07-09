@@ -25,7 +25,7 @@ import { ContainerPhotossiabService } from './container-photossiab.service';
 @ApiTags('contenedor_fotossiab')
 @Controller('container-photossiab')
 export class ContainerPhotossiabController {
-  constructor(private readonly service: ContainerPhotossiabService) {}
+  constructor(private readonly service: ContainerPhotossiabService) {} 
 
   @ApiOperation({ summary: 'Paginación de todos los registros' })
   @ApiResponse({
