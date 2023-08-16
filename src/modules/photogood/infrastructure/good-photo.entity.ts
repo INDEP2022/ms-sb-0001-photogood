@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity('bienes_foto', { schema: 'sera' })
 export class GoodPhotoEntity {
   @PrimaryColumn({
-    type: 'bigint',
+    type: 'numeric',
     name: 'no_bien',
 
     precision: 10,
@@ -10,7 +10,7 @@ export class GoodPhotoEntity {
   goodNumber: number;
 
   @PrimaryColumn({
-    type: 'smallint',
+    type: 'numeric',
     name: 'no_consec',
 
     precision: 10,
@@ -45,7 +45,7 @@ export class GoodPhotoEntity {
   photoDateHc: number;
 
   @Column({
-    type: 'smallint',
+    type: 'numeric',
     name: 'publ_img_cat_web',
 
     precision: 16,
@@ -53,7 +53,7 @@ export class GoodPhotoEntity {
   publicImgcatWeb: number;
 
   @Column({
-    type: 'smallint',
+    type: 'numeric',
     name: 'existe_fs',
 
     precision: 16,
@@ -61,7 +61,7 @@ export class GoodPhotoEntity {
   existsfs: number;
 
   @Column({
-    type: 'smallint',
+    type: 'numeric',
     name: 'existe_prod',
 
     precision: 16,
