@@ -92,6 +92,16 @@ export class GoodPhotoDto {
     required: false,
   })
   existsproduction: number;
+
+  @Type(() => String)
+  @IsOptional()
+  @IsString({ message: Message.STRING('$property') })
+  @ApiProperty({
+    title: 'usuario_creacion',
+    example: 'Dato de tipo texto',
+    required: false,
+  })
+  userCreation: string;
 }
 
 export class GoodPhotoFieldsDTO {

@@ -57,4 +57,11 @@ export class GoodPhotoEntity {
     name: 'existe_prod',
   })
   existsproduction: number;
+  
+
+  @Column('character varying', {
+    name: 'usuario_creacion',
+    length: 50
+  })
+  userCreation: string;
 }
