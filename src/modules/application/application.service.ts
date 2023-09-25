@@ -141,28 +141,22 @@ export class ApplicationService {
             };
         }
     }
-    async pupInsHistBienPhoto({ pGoodNumber, consecNumber, newConsecNumber, user }: QueryVcatwebHistDto) {
+    async pupInsHistBienPhoto({ pGoodNumber, consecNumber, user, link, newlink }: QueryVcatwebHistDto) {
         try {
+            
             let V_CAT_WEB: number;
             let now = LocalDate.getNow('YYYY-MM-DD HH:mm:ss');
-            let index = '\\\\165.128.172.66\\bankfots\\SIAB_F_01\\Imagenes';
-            let indexHis = '\\\\165.128.172.66\bankfots\SIABFotsHist\Imagenes';
             let consecgoodNumber
-            let newserialConsecNumber
-            let oldserialConsecNumber
 
             if (!isNaN(Number(pGoodNumber))) {
                 consecgoodNumber = 'B' + pGoodNumber.toString().padStart(10, '0');
             }
 
-            let newlink = `${indexHis}\\${consecgoodNumber}\\${consecgoodNumber}\\${newConsecNumber}`
-            let oldlink = `${index}\\${consecgoodNumber}\\${consecgoodNumber}\\${consecNumber}`
             const select = await this.entity.query(`
                     SELECT coalesce (MAX(PUBL_IMG_CAT_WEB),0) as data
                     FROM sera.BIENES_FOTO
                     WHERE NO_BIEN = ${pGoodNumber} 
-                    AND UBICACION = '${newlink}'; 
-                   
+                    AND no_consec = ${consecNumber};
                  `)
             V_CAT_WEB = select[0].data
             await this.entity.query(`INSERT INTO sera.HISTORICO_FOTOS_BIEN (NO_BIEN,
@@ -177,7 +171,7 @@ export class ApplicationService {
                     '${user}',
                     ${V_CAT_WEB},
                     '${newlink}',
-                   ' ${oldlink}'
+                    '${link}'
                     )
               `)
 
