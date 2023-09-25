@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 import { Message } from 'src/shared/utils/message.decorator';
 
 export class QueryVcatwebHistDto {
@@ -13,6 +13,7 @@ export class QueryVcatwebHistDto {
     })
     pGoodNumber: number | null;
     @Type(() => String)
+    @IsOptional()
     @IsString({ message: Message.STRING('$property') })
     @ApiProperty({
         title: 'P_PATH_BIEFOT',
@@ -36,4 +37,22 @@ export class QueryVcatwebHistDto {
         required: false,
     })
     user: string | null;
+    @Type(() => String)
+    @IsOptional()
+    @IsString({ message: Message.STRING('$property') })
+    @ApiProperty({
+        title: 'rutaFoto',
+        example: 'Dato de tipo texto',
+        required: false,
+    })
+    link: string | null;
+    @Type(() => String)
+    @IsOptional()
+    @IsString({ message: Message.STRING('$property') })
+    @ApiProperty({
+        title: 'rutaHistoricoFoto',
+        example: 'Dato de tipo texto',
+        required: false,
+    })
+    newlink: string | null;
 }
